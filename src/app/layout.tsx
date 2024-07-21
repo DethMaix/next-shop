@@ -6,6 +6,7 @@ import { SITE_NAME } from '@/shared/constants/seo.constants'
 
 import './globals.scss'
 import { Providers } from './providers'
+import { MainLayout } from '@/layouts/MainLayout'
 
 const zen = Noto_Sans({
 	subsets: ['cyrillic', 'latin'],
@@ -35,15 +36,17 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={zen.className}>
-				<Providers>
-					{children}
+				<MainLayout>
+					<Providers>
+						{children}
 
-					<Toaster
-						theme='dark'
-						position='top-center'
-						duration={1500}
-					/>
-				</Providers>
+						<Toaster
+							theme='dark'
+							position='top-center'
+							duration={1500}
+						/>
+					</Providers>
+				</MainLayout>
 			</body>
 		</html>
 	)
