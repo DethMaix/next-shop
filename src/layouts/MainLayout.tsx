@@ -9,7 +9,7 @@ export const MainLayout: FC<PropsWithChildren> = ({ children }) => {
 	return (
 		<>
 			<Header />
-			<body>{children}</body>
+				{children}
 			<Footer />
 		</>
 	)
