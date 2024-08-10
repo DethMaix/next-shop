@@ -36,8 +36,8 @@ export default function RootLayout({
 	return (
 		<html lang='en'>
 			<body className={zen.className}>
-				<MainLayout>
-					<Providers>
+				<Providers>
+					<MainLayout>
 						{children}
 
 						<Toaster
@@ -45,8 +45,8 @@ export default function RootLayout({
 							position='top-center'
 							duration={1500}
 						/>
-					</Providers>
-				</MainLayout>
+					</MainLayout>
+				</Providers>
 			</body>
 		</html>
 	)

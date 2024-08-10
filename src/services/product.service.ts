@@ -1,11 +1,17 @@
 import { axiosClassic } from '@/api/interceptors'
+import { Product } from '@/shared/types'
 
 export const productService = {
 	getAll: async () => {
-		const res = await axiosClassic.get(
-			'products/v2/list?store=US&offset=0&categoryId=4209&country=US&sort=freshness&currency=USD&sizeSchema=US&limit=48&lang=en-US'
-		)
-    
-    return res.data
+		// TODO: implement pagination whe api will be ready
+		const res = await axiosClassic.get<Product[]>('/products')
+
+		return res.data
+	},
+
+	create: async (dto: Product) => {
+		const res = await axiosClassic.post('/products', dto)
+
+		return res.data
 	}
 }
